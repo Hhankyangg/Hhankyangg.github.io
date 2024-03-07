@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>一次社团面试</title>
+    <link href="/2024-03-06-yi-ci-she-tuan-mian-shi.html"/>
+    <url>/2024-03-06-yi-ci-she-tuan-mian-shi.html</url>
+    
+    <content type="html"><![CDATA[<p>加一个社团，NJU Financial Engineering Association。然后经历了一次几乎啥都没答出来的面试。基本流程就是先过简历然后问了两个有点像脑筋急转弯的题。因为自己确实菜而且没想到面试是这样的，所以回答的很差，这里靠着回忆记录一下问了些啥：</p><h1 id="关于机器学习"><a href="#关于机器学习" class="headerlink" title="关于机器学习"></a>关于机器学习</h1><p>一开始寒暄了几句，然后直接开始了。从机器学习开始：</p><ol><li>问了解什么时序模型吗？我回答美赛用到了类似 RNN 的模型，后被追问 LSTM 比传统 RNN 好在哪里。因为我没有系统学过 RNN，没答出来。</li><li>问常见激活函数有哪些，我回答 ReLU 和 Sigmoid 后追问 ReLU 和 Sigmoid 的缺点。我一直用 ReLU 根本没想过这个问题，没答出来。</li><li>问 Transformer 的 Self-Attention 机制和 Multi-Head Attention。能答。</li><li>问 Transformer 中 q，k，v 矩阵是什么。能答。</li><li>问 为什么 Transformer 可以大量用在 NLP 中，CNN 却没有。我的回答着重在 Attention 机制，面试官同学则表示 Position Encoding 也很重要。</li></ol><h1 id="关于-Python"><a href="#关于-Python" class="headerlink" title="关于 Python"></a>关于 Python</h1><p>回答了一些机器学习问题后，面试官同学说 Python 也很重要，并且看我也学过 CS61A，就问了一系列 Python 问题：</p><h2 id="关于-Python-语法"><a href="#关于-Python-语法" class="headerlink" title="关于 Python 语法"></a>关于 Python 语法</h2><ol><li>问 <code>tuple</code> 和 <code>list</code> 的区别。我回答了很多但都没对点，面试官同学暗示我 tuple 是否可改，我才突然反应过来 tuple 是不可改的数据类型，list 则不是。</li><li>典型问题：<code>a = [1,2,3]</code>，<code>b = a</code>，<code>b[0] = 4</code>，问 <code>a</code>。轻松应对并解释。</li><li>问 <code>yield</code> 和 <code>return</code> 区别，回答了好几点没对点，还是面试官同学举了个例子我才答对点。</li><li>问 <code>Decorator</code> 是什么，回答是 <code>@...</code> 后被追问 <code>interpreter</code> 是怎么解释它的。其实 CS61A 讲过但我忘了，没答出来。</li><li>问 Python 中的类和 Java，CPP 中的类有什么区别，我回答安全性不好，没法用 <code>public</code> 之类修饰。后被追问 Python 中怎么做可以限制 attribute 可见性。没答上来。答案是双下划线。</li></ol><h2 id="关于-Python-库"><a href="#关于-Python-库" class="headerlink" title="关于 Python 库"></a>关于 Python 库</h2><ol><li>问是否熟悉 <code>numpy</code> 和 <code>pandas</code> 的 <code>DataFrame</code>。回答是。</li><li>问有没有接触过什么多线程库。回答否。</li><li>说有一个几千万行的 <code>DataFrame</code>，有什么办法可以十行十行的访问。我第一反应是 <code>for</code>，然而肯定会爆内存。面试官同学提示说有什么 <code>pandas</code> 的 <code>api</code> 可以用，我没答出来。</li><li><code>numpy</code> 和 <code>pandas</code> 同时处理同样大小的矩阵，谁速度快？我说估计是 <code>numpy</code>，被追问原因，没答出来。</li></ol><h1 id="关于-Linux"><a href="#关于-Linux" class="headerlink" title="关于 Linux"></a>关于 Linux</h1><ol><li>问我如果只想看一个文件前十行，应该怎么看。轻松回答。</li><li>问如何将一个程序运行结果保存到一个文件。轻松回答。</li><li>问是否会写 shell 脚本。回答否。</li></ol><h1 id="关于题"><a href="#关于题" class="headerlink" title="关于题"></a>关于题</h1><p>最后考虑到我们没有问了两个题：</p><ol><li>有 1000 个人，999 个人只会说谎话，1 个人只会说真话。有 1000 个宝箱，999 个假的，1 个真的。每次可以问一个人一个答案只能是 “是” 或者 “否” 的问题，请问需要问多少次才能找到宝箱？</li></ol><blockquote><p>首先要找出宝箱，一定要有一个已知说真话或者假话的人，然后用二分法问即可（每次问他这一半有没有真宝箱）。至于怎么找出一个已知真假的人，我一开始还想着选两个人最多问三次，结果面试官同学表示只用找一个人问一个真理（比如 1 + 1 是否等于 2）即可。</p></blockquote><ol start="2"><li>有 200 个电池，100 个好的 100 个坏的。有一个玩具车，只有同时用两个好的电池才能驱动，别的情况都跑不起来。问要试多少次才能让玩具车跑起来。</li></ol><blockquote><p>将电池分两组，若试了 100 次都没让小车被驱动，则证明两组每次都是一真一假，否则肯定提早就找到 2 个好电池了。接下来选出两对，4 个电池肯定有 2 好 2 坏。此时至多再试 4 次即可。所以共 100 + 4 = 104 次。</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>面试</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>面试</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>我的大二上</title>
     <link href="/2024-01-27-wo-de-da-er-shang.html"/>
     <url>/2024-01-27-wo-de-da-er-shang.html</url>
